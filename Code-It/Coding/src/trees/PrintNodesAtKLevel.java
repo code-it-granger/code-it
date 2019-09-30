@@ -1,14 +1,13 @@
 package trees;
 
-import trees.dataStructure.BinaryTree.Node;
-import trees.dataStructure.BinaryTree;
+import trees.dataStructure.Trees;
 
-public class PrintNodesAtKLevel {
+public class PrintNodesAtKLevel extends Trees {
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
-        Node root = tree.create();
+        Trees tree = new Trees();
+        Node root = tree.createBT();
 
-        printNodesAtKLevel(root,0);
+        printNodesAtKLevel(root,2);
     }
 
     public static void printNodesAtKLevel(Node node, int k){

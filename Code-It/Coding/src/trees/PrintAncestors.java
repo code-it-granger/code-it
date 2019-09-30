@@ -1,26 +1,21 @@
 package trees;
 
-import trees.dataStructure.BinaryTree;
-import trees.dataStructure.BinaryTree.*;
+import trees.dataStructure.Trees;
 import trees.traversal.Traversal;
 
-import java.util.Stack;
-
-public class PrintAncestors {
+public class PrintAncestors extends Trees {
 
     public static void main(String[] args) {
-        BinaryTree tree = new BinaryTree();
+        Trees tree = new Trees();
         Traversal t = new Traversal();
-        Node root = tree.create();
-        t.inOrder(root);
-        System.out.println();
-        printAncestorsRecursive(root, 5);
+        Node root = tree.createBT();
+        printAncestorsRecursive(root, "F");
     }
 
-    public static boolean printAncestorsRecursive(Node node, int key){
+    public static boolean printAncestorsRecursive(Node node, String key){
         if(node==null)
             return false;
-        if(node.data==key)
+        if(node.data.equalsIgnoreCase(key))
             return true;
 
         if(printAncestorsRecursive(node.left,key) || printAncestorsRecursive(node.right, key)){

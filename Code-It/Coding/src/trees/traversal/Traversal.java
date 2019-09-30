@@ -1,12 +1,9 @@
 package trees.traversal;
 
-import trees.dataStructure.BinarySearchTree;
-import trees.dataStructure.BinaryTree;
-import trees.dataStructure.BinaryTree.*;
+import trees.dataStructure.Trees;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
 
 /*
                     1
@@ -15,18 +12,18 @@ import java.util.Queue;
     6
 */
 
-public class Traversal {
+public class Traversal extends Trees {
     public static void main(String[] args) {
-        BinarySearchTree bt = new BinarySearchTree();
-        Traversal traversal = new Traversal();
-        Node root = bt.create();
-        traversal.inOrder(root);
-        System.out.println();
-        traversal.preOrder(root);
-        System.out.println();
-        traversal.postOrder(root);
-
-        traversal.levelOrder(root);
+        Trees bst = new Trees();
+//        Traversal traversal = new Traversal();
+//        Node root = bst.create();
+//        traversal.inOrder(root);
+//        System.out.println();
+//        traversal.preOrder(root);
+//        System.out.println();
+//        traversal.postOrder(root);
+//
+//        traversal.levelOrder(root);
     }
 
     public void inOrder(Node root){

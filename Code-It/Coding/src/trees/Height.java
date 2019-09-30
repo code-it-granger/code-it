@@ -1,24 +1,24 @@
 package trees;
 
-import trees.dataStructure.BinaryTree;
-import trees.dataStructure.BinaryTree.Node;
+import trees.dataStructure.Trees;
 
-public class Height {
+public class Height extends Trees {
     public static void main(String[] args) {
-        BinaryTree bt = new BinaryTree();
-        BinaryTree.Node root = bt.create();
+        Trees trees = new Trees();
+        Node root = trees.createBT();
         int height = height(root);
         System.out.println(height);
     }
-    public static int height(Node root){
-        if(root==null)
+
+    public static int height(Node root) {
+        if (root == null)
             return 0;
-        if(root.left==null && root.right==null)
+        if (root.left == null && root.right == null)
             return 1;
 
         int lheight = height(root.left);
         int rheight = height(root.right);
 
-        return Math.max(lheight,rheight)+1;
+        return Math.max(lheight, rheight) + 1;
     }
 }
