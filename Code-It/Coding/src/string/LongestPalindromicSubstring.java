@@ -1,31 +1,35 @@
 package string;
 
+/*
+https://medium.com/@bhprtk/longest-palindromic-substring-a8190fab03ff
+*/
+
 public class LongestPalindromicSubstring {
     public static void main(String[] args) {
-        String s = "sabcdcbad";
+        String s = "annab";
         System.out.println(lps(s,0,0));
     }
     private static String lps(String s, int start, int end){
+        String lps=s.substring(0,1);
         for(int i=0;i<s.length();i++){
-            int len1=expand(s,i,i);
-            int len2=expand(s,i,i+1);
-            int len = Math.max(len1,len2);
+            String temp = expand(s,i,i);
+            if(temp.length() > lps.length())
+                lps=temp;
 
-            if(len > end-start){
-                start = i - (len-1)/2;
-                end = i + len/2;
-            }
+            temp = expand(s,i,i+1);
+
+            if(temp.length() > lps.length())
+                lps = temp;
         }
 
-        return s.substring(start,end+1);
-        //return String.valueOf(end+1-start);
+        return lps;
     }
 
-    private static int expand(String s, int left, int right){
+    private static String expand(String s, int left, int right){
         while(left>=0 && right<s.length() && s.charAt(left)==s.charAt(right)){
             left--;
             right++;
         }
-        return right-left-1;
+        return s.substring(left+1, right);
     }
 }
