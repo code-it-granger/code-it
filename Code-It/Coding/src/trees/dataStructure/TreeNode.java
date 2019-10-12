@@ -5,7 +5,7 @@ public class TreeNode {
         public Node left,right;
         public String data;
 
-        Node(String data){
+        public Node(String data){
             this.data=data;
             left=null;
             right=null;
