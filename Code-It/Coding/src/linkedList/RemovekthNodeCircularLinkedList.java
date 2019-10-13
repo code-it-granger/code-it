@@ -1,4 +1,4 @@
-package linkedList.problems;
+package linkedList;
 
 public class RemovekthNodeCircularLinkedList {
     static class Node {
@@ -12,7 +12,7 @@ public class RemovekthNodeCircularLinkedList {
     }
 
     public static void main(String[] args) {
-        //  Node a0 = new Node(0);
+        Node a0 = new Node(0);
         Node a1 = new Node(1);
         Node a2 = new Node(2);
         Node a3 = new Node(3);
@@ -25,7 +25,7 @@ public class RemovekthNodeCircularLinkedList {
         Node a10 = new Node(10);
 
 
-        //    a0.next = a1;
+        a0.next = a1;
         a1.next = a2;
         a2.next = a3;
         a3.next = a4;
@@ -38,7 +38,7 @@ public class RemovekthNodeCircularLinkedList {
         a10.next = a1;
 
         print(a1);
-        removeKth(a1, 3);
+        removeKth(a1, 2);
     }
 
     private static void removeKth(Node head, int k) {
@@ -68,7 +68,7 @@ public class RemovekthNodeCircularLinkedList {
 
             //if tail element is to be deleted
             else if (curr.next == head) {
-                curr = head;
+                curr = curr.next;
             } else {
                 curr = curr.next;
             }
